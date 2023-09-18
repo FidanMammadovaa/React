@@ -9,16 +9,16 @@ import React, { Component } from "react";
 //         // https://covers.openlibrary.org/b/isbn/9781680721379-M.jpg
 //         const {title, page_count, copyright, language, authors, categories, summary, canonical_isbn} = props.bookInfo
 
-//         let bookImage = new URL(`https://covers.openlibrary.org/b/isbn/${canonical_isbn}-L.jpg`)
+//         let bookImage = new URL(`https://covers.openlibrary.org/b/isbn/${canonical_isbn}-L.jpg`) // если имеется картинка
 //         return (
 //             <div>
 //                 <p>Title: {title}</p>
 //                 <p>Page Count: {page_count}</p>
 //                 <p>Copyright: {copyright}</p>
 //                 <p>Language: {language}</p>
-//                 <p>Category: {categories.join('\n')}</p>
+//                 <p>Category: {categories ? categories.join(' ') : ' '}</p>
 //                 <p>Summary: {summary}</p>
-//                 <p>Author: {authors.join('\n')}</p>
+//                 <p>Author: {authors ? authors.join(' ') : ' '}</p>
 //                 <img src={bookImage}></img>
 
 //             </div>
@@ -27,7 +27,7 @@ import React, { Component } from "react";
 // }
 //#endregion
 
-//#region Fourth Task
+// #region Fourth Task
 class Books extends Component
 {
     render()
@@ -37,15 +37,16 @@ class Books extends Component
             const {title, page_count, copyright, language, authors, categories, summary, canonical_isbn} = this.props.bookInfo
 
         let bookImage = new URL(`https://covers.openlibrary.org/b/isbn/${canonical_isbn}-L.jpg`)
+
         return (
             <div>
                 <p>Title: {title}</p>
                 <p>Page Count: {page_count}</p>
                 <p>Copyright: {copyright}</p>
                 <p>Language: {language}</p>
-                <p>Category: {categories.join('\n')}</p>
+                <p>Category: {categories ? categories.join(' ') : ' '}</p>
                 <p>Summary: {summary}</p>
-                <p>Author: {authors.join('\n')}</p>
+                <p>Author: {authors ? authors.join(' ') : ' '}</p>
                 <img src={bookImage}></img>
 
             </div>
