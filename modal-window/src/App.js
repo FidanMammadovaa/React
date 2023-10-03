@@ -23,11 +23,14 @@ function App() {
       <button onClick={openModalWindow}>Open</button>
       {isOpen && (
         <Modal>
-          <div style={{ color: 'black' }}>
+          <div className="modal-overlay" onClick={closeModalWindow}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <h1>Modal window</h1>
+              <button className="close-button" onClick={closeModalWindow}>
+                Close
+              </button>
+            </div>
           </div>
-          <button className="close-button" onClick={closeModalWindow}>
-            Close
-          </button>
         </Modal>
       )}
     </div>
