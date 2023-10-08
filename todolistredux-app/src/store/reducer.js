@@ -4,30 +4,30 @@ let initialState =
 }
 
 
-export default function reducer(state = initialState, action)
-{
-    if (action.type === "add")
-    {
+export default function reducer(state = initialState, action) {
+    if (action.type === "add") {
         let newArr = [...state.tasksArr]
         newArr.push(action.payload)
-        return {...state, tasksArr: newArr}
+        return { ...state, tasksArr: newArr }
     }
-    else if (action.type === "delete")
-    {
-        let index = action.payload
-        let newArr = state.tasksArr.filter((task) => task.id != index)
-        console.log(newArr)
-        return {...state, tasksArr: newArr}
+    else if (action.type === "delete") {
+        let taskIndex = action.payload;
+        if (taskIndex !== -1) {
+            let newArr = [...state.tasksArr]
+            newArr.splice(taskIndex, 1)
+            return { ...state, tasksArr: newArr }
+        }
     }
-    else if (action.type === "update")
-    {
-        // let taskToUpdate = action.payload
-        // let newArr = [...state.tasksArr]
-        // newArr = newArr.find((task) => task === taskToUpdate)
+    else if (action.type === "update") {
+        const { index, task } = action.payload 
+        const newArr = [...state.tasksArr]
 
-        // return {...state, tasksArr: newArr}
+        if (index >= 0 && index < newArr.length) {
+            newArr[index] = task
+        }
+        return { ...state, tasksArr: newArr }
     }
 
 
-    return {...state}
+    return { ...state }
 }
