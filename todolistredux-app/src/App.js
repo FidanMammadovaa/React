@@ -7,7 +7,7 @@ function App() {
   let tasksArr = useSelector(state => state.tasksArr)
 
   let [taskInput, setTaskInput] = useState('')
-  let [updateTaskInputs, setUpdateTaskInputs] = useState(Array(tasksArr.length).fill(''))
+  let [updateTaskInputs, setUpdateTaskInputs] = useState([])
 
   let taskInputRef = useRef(null)
 
@@ -33,6 +33,8 @@ function App() {
     if (updateTaskInputs[index]) {
       dispatch({ type: 'update', payload: { index, task: updateTaskInputs[index] } })
     }
+
+
     setUpdateTaskInputs(prevInputs => {
       const newInputs = [...prevInputs]
       newInputs[index] = ''
