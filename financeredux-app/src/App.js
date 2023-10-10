@@ -3,8 +3,7 @@ import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { ExpensesList } from "./ExpensesList";
 import { ExpensesForm } from "./ExpensesForm";
-
-import { SetCategory } from "./store/actions";
+import { setCategory } from "./store/actions";
 
 function App() {
   let expensesArr = useSelector((state) => state.expensesArr);
@@ -12,12 +11,13 @@ function App() {
 
   useEffect(() => {
     console.log(expensesArr);
+    console.log(category)
   }, [expensesArr]);
 
   const dispatch = useDispatch();
 
   const handleCategoryChange = (e) => {
-    dispatch(SetCategory(e.target.value));
+    dispatch(setCategory(e.target.value));
   };
 
   const filteredExpenses =
@@ -42,6 +42,7 @@ function App() {
           <option value="transportation">Transportation</option>
         </select>
       </div>
+      <h1>{category.toUpperCase()}</h1>
       <ExpensesList expenses={filteredExpenses} />
       <div className="total">
         <p>Total Amount: {totalAmount}</p>

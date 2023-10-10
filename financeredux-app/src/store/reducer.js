@@ -18,7 +18,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, expensesArr: anotherNewArr }
 
     case SetCategory:
-      return { ...state, category: action.payload }
+      let categoryToSet = action.payload
+      return { ...state, category: categoryToSet}
     default:
       return state;
   }
