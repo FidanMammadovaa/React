@@ -1,0 +1,60 @@
+.dark
+{
+  background-color: rgb(25, 25, 25);
+  color: rgb(222, 222, 222);
+}
+
+.light
+{
+  background-color: rgb(222, 222, 222);
+  color: rgb(25, 25, 25);
+}
+
+.app {
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  justify-content: center;
+  height: 100%;
+  
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 100%;
+}
+
+.main-inner-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  width: 50%;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  margin: 0 20px;
+  width: 150px;
+  color:rgb(222, 222, 222);
+  font-size: 14px;
+}
+
+.buttons-container, .link{
+  background-color: rgb(111, 111, 111);
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button:hover {
+  background-color: rgb(91, 91, 91);
+}
