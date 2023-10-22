@@ -99,6 +99,8 @@ export function MyBag() {
     setPhoneNumberValidation("");
     setAddressValidation("");
     setSubmitFormIsVisible(false);
+    setOrderSuccess(false);
+    dispatch(clearBasket())
   };
 
   const handleSuccessSubmit = () => {
