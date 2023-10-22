@@ -103,6 +103,7 @@ export function MyBag() {
 
   const handleSuccessSubmit = () => {
     dispatch(clearBasket());
+    setOrderSuccess(false)
     handleCancel();
   };
 
